@@ -232,4 +232,57 @@ describe('lozad', () => {
       assert.equal(image.getAttribute('src'), image.dataset.src)
     })
   })
+
+  // describe('when passing IntersectionObserver options', () => {
+  //   beforeEach(() => {
+  //     document.body.innerHTML = ''
+  //     const container = document.createElement('div')
+  //     container.setAttribute('id', 'container')
+  //     const anotherContainer = document.createElement('div')
+  //     anotherContainer.setAttribute('id', 'anotherContainer')
+
+  //     const image1 = document.createElement('img')
+  //     image1.dataset.src = Math.random()
+  //       .toString(36)
+  //       .substring(7)
+  //     const image2 = document.createElement('img')
+  //     image2.dataset.src = Math.random()
+  //       .toString(36)
+  //       .substring(7)
+  //     container.appendChild(image1)
+  //     anotherContainer.appendChild(image2)
+  //     document.body.append(container)
+  //     document.body.append(anotherContainer)
+  //   })
+
+  //   it('should load the first image according options', () => {
+  //     console.log("document.querySelector('#container')", document.querySelector('#container').innerHTML);
+  //     const observer = lozad('img', {
+  //       root: document.querySelector('#container')
+  //     })
+  //     const imageContainer = document.querySelector('#container img')
+  //     const imageAnotherContainer = document.querySelector('#anotherContainer img')
+  //     observer.observe()
+  //     console.log("document.body.innerHTML", document.body.innerHTML);
+
+  //   })
+
+  //   it('should not load images according options', () => {
+
+  //     console.log("document.body.innerHTML", document.body.innerHTML);
+  //     const observer = lozad('img', {
+  //       root: document.querySelector('#anotherContainer')
+  //     })
+  //     const imageContainer = document.querySelector('#container img')
+  //     const imageAnotherContainer = document.querySelector('#anotherContainer img')
+  //     observer.observe()
+  //     console.log("document.body.innerHTML", document.body.innerHTML);
+
+  //     // assert.equal(false, images[0].classList.contains('loaded'))
+  //     // assert.equal(false, images[1].classList.contains('loaded'))
+  //     // assert.equal('false', images[0].dataset.loaded)
+  //     // assert.equal('false', images[1].dataset.loaded)
+  //   })
+  // })
+
 })

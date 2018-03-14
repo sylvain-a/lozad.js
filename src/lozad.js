@@ -8,6 +8,7 @@ const isIE = document.documentMode
 const defaultConfig = {
   rootMargin: '0px',
   threshold: 0,
+  root: null,
   load(element) {
     if (element.nodeName.toLowerCase() === 'picture') {
       const img = document.createElement('img')
@@ -60,12 +61,13 @@ const getElements = selector => {
 }
 
 export default function (selector = '.lozad', options = {}) {
-  const {rootMargin, threshold, load, loaded} = {...defaultConfig, ...options}
+  const {rootMargin, root, threshold, load, loaded} = {...defaultConfig, ...options}
   let observer
 
   if (window.IntersectionObserver) {
     observer = new IntersectionObserver(onIntersection(load, loaded), {
       rootMargin,
+      root,
       threshold
     })
   }

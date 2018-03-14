@@ -1,5 +1,5 @@
-/*! lozad.js - v1.3.0 - 2018-02-16
-* https://github.com/ApoorvSaxena/lozad.js
+/*! lozad.js - v1.3.0 - 2018-03-14
+* https://github.com/sylvain-a/lozad.js
 * Copyright (c) 2018 Apoorv Saxena; Licensed MIT */
 
 
@@ -21,6 +21,7 @@ var isIE = document.documentMode;
 var defaultConfig = {
   rootMargin: '0px',
   threshold: 0,
+  root: null,
   load: function load(element) {
     if (element.nodeName.toLowerCase() === 'picture') {
       var img = document.createElement('img');
@@ -82,6 +83,7 @@ var lozad = function () {
 
   var _defaultConfig$option = _extends({}, defaultConfig, options),
       rootMargin = _defaultConfig$option.rootMargin,
+      root = _defaultConfig$option.root,
       threshold = _defaultConfig$option.threshold,
       load = _defaultConfig$option.load,
       loaded = _defaultConfig$option.loaded;
@@ -91,6 +93,7 @@ var lozad = function () {
   if (window.IntersectionObserver) {
     observer = new IntersectionObserver(onIntersection(load, loaded), {
       rootMargin: rootMargin,
+      root: root,
       threshold: threshold
     });
   }
