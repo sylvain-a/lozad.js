@@ -233,7 +233,7 @@ describe('lozad', () => {
     })
   })
 
-  // describe('when passing IntersectionObserver options', () => {
+  // Describe('when passing IntersectionObserver options', () => {
   //   beforeEach(() => {
   //     document.body.innerHTML = ''
   //     const container = document.createElement('div')
@@ -284,5 +284,4 @@ describe('lozad', () => {
   //     // assert.equal('false', images[1].dataset.loaded)
   //   })
   // })
-
 })
